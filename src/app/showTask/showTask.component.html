@@ -1,0 +1,32 @@
+<h1>Show Task</h1>
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Task No.</th>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Priority</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor = "let task of data; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.date}}</td>
+        <td>{{task.priority}}</td>
+        <td><button type="submit" (click)="goToEdit(i)">Edit</button></td>
+        <td>
+          <button type="submit" (click)="delete(task._id)">Done</button>
+        </td>
+
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
