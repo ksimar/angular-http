@@ -72,13 +72,14 @@ export class AppService {
       'Content-Type': 'application/json'
     })
     let obj={
+
       date:task.date,
       title: task.title,
       priority: task.priority,
       description: task.description,
       _id: task._id
     }
-    return this.http.post('http://localhost:9000/add',obj,{headers:jsonHeaders}).map((response:any)=> {
+    return this.http.post('http://localhost:9000/update',obj,{headers:jsonHeaders}).map((response:any)=> {
       return this.extractData(response)
     }).catch((e:any) => {
       alert("error");

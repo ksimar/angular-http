@@ -19,7 +19,7 @@
         <td>{{task.description}}</td>
         <td>{{task.date}}</td>
         <td>{{task.priority}}</td>
-        <td><button type="submit" (click)="goToEdit(i)">Edit</button></td>
+        <td><button type="submit" (click)="goToEdit(task._id)">Edit</button></td>
         <td>
           <button type="submit" (click)="delete(task._id)">Done</button>
         </td>

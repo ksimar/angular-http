@@ -14,7 +14,7 @@ export class CreateTaskComponent implements OnInit{
 
   userTasks: Task[];
   userTask: Task=new Task('','','','');
-  id: string;
+  id: string=null;
 
  /* constructor(){
     this.userTask = new Task("title", "desc")
@@ -28,7 +28,7 @@ export class CreateTaskComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.userTasks = this.service.tasks;
+   // this.userTasks = this.service.tasks;
     this.route.params.subscribe((data:any)=>{
       this.id=data.id;
       if(this.id){
@@ -36,6 +36,7 @@ export class CreateTaskComponent implements OnInit{
         this.service.getData().subscribe((allTasks: any)=> {
             this.userTasks = allTasks
             this.userTask = this.userTasks.filter(x=> (x._id==this.id))[0];
+
           },
           (e:any)=> {
             alert(e)
@@ -46,8 +47,7 @@ export class CreateTaskComponent implements OnInit{
   }
 
   submit() {
-    console.log("create: Submit called")
-
+   // console.log("create: Submit called")
    if(this.id){
       //update
      this.service.editData(this.userTask).subscribe((data1: any)=> {
