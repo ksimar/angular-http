@@ -44,10 +44,10 @@ export class AppService {
        'Content-Type': 'application/json'
      })
      let obj={
-       date:"ASD",
-       title: "asdas",
-       priority: "asdasd",
-       description: "asdasd"
+       date:task.date,
+       title: task.title,
+       priority: task.priority,
+       description: task.description
      }
      return this.http.post('http://localhost:9000/add',obj,{headers:jsonHeaders}).map((response:any)=> {
        return this.extractData(response)
@@ -62,8 +62,27 @@ export class AppService {
     let jsonHeaders= new Headers({
       'Content-Type': 'application/json'
     })
-    return this.http.get('http://localhost:9000/remove/id',{headers:jsonHeaders}).map((response:any)=> {
+    return this.http.get('http://localhost:9000/remove/'+id,{headers:jsonHeaders}).map((response:any)=> {
       return this.extractData(response)
+    });
+  }
+
+  editData(task: Task):Observable<any> {
+    let jsonHeaders= new Headers({
+      'Content-Type': 'application/json'
+    })
+    let obj={
+      date:task.date,
+      title: task.title,
+      priority: task.priority,
+      description: task.description,
+      _id: task._id
+    }
+    return this.http.post('http://localhost:9000/add',obj,{headers:jsonHeaders}).map((response:any)=> {
+      return this.extractData(response)
+    }).catch((e:any) => {
+      alert("error");
+      return Observable.throw<any>(new Error("error"));
     });
   }
 
