@@ -4,9 +4,9 @@ import {AppService} from "../app.service";
 import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
-  //moduleId: module.id,
+  moduleId: module.id,
   selector: 'createTask',
-  templateUrl: './app/createTask/createTask.component.html',
+  templateUrl: 'createTask.component.html',
   styleUrls: ['']
 })
 

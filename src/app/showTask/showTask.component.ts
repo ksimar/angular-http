@@ -4,9 +4,9 @@ import {Router} from "@angular/router";
 import {Task} from "../task";
 
 @Component({
-  //moduleId: module.id,
+  moduleId: module.id,
   selector: 'showTask',
-  templateUrl: './app/showTask/showTask.component.html',
+  templateUrl: 'showTask.component.html',
   styleUrls: ['']
 })
 

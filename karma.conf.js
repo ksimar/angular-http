@@ -21,6 +21,7 @@ module.exports = function(config) {
       builtPaths: [appBase, testingBase], // add more spec base paths as needed
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
+    browserNoActivityTimeout: 500000,
 
     customLaunchers: {
       // From the CLI. Not used here but interesting
